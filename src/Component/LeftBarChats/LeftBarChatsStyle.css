@@ -1,0 +1,37 @@
+.LeftBarChats {
+	display: grid;
+	grid-template-columns: 1fr 4fr 1fr;
+	/* border: red solid 2px; */
+}
+
+.LeftBarChatsAvtar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.LeftBarChatsName {
+	display: flex;
+	flex-direction: column;
+}
+
+.LeftBarChatsNameName {
+	/* border: red solid 2px; */
+	overflow: hidden;
+	text-transform: capitalize;
+	height: 3vh;
+}
+
+.LeftBarChatsNameMessage {
+	/* border: red solid 2px; */
+	height: 3vh;
+	overflow: hidden;
+	margin-top: -2vh;
+}
+
+.LeftBarChatsTime {
+	display: flex;
+	justify-content: right;
+	margin-right: 2vh;
+	margin-top: 1vh;
+}

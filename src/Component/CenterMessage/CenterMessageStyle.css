@@ -1,0 +1,21 @@
+.CenterMessageMainShapes {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%, 3% 25%);
+	height: max-content;
+	border-radius: 0 2vh 2vh 4vh;
+	padding-left: 3vw;
+	/* font-size: 18px; */
+	padding-top: 2px;
+	padding-bottom: 0.5vh;
+	padding-right: 1vw;
+	background-color: #202c33;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
+	white-space: normal;
+	margin-bottom: 2vh;
+}
+
+.MessageTime {
+	text-align: right;
+	margin-right: 2vh;
+}

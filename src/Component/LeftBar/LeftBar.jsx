@@ -3,6 +3,7 @@ import "./LeftBarStyle.css";
 
 import SearchIcon from "@mui/icons-material/Search";
 import Lorem from "../Lorem/Lorem";
+import LeftBarChats from "../LeftBarChats/LeftBarChats";
 
 const LeftBar = () => {
 	return (
@@ -14,13 +15,27 @@ const LeftBar = () => {
 				<input type="text" placeholder="Search ..." />
 			</div>
 			<div className="LeftBarMainChats">
-				<Lorem />
-				<Lorem />
-				<Lorem />
-				<Lorem />
-				<Lorem />
-				<Lorem />
-				<Lorem />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
+				<LeftBarChats />
 			</div>
 		</div>
 	);
