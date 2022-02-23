@@ -3,7 +3,7 @@ import LeftBar from "./Component/LeftBar/LeftBar";
 import TopNav from "./Component/TopNav/TopNav";
 import Bottom from "./Component/Bottom/Bottom.jsx";
 import Center from "./Component/Center/Center";
-import TopLeft from "./TopLeft/TopLeft";
+import TopLeft from "./Component/TopLeft/TopLeft";
 
 function App() {
 	return (
