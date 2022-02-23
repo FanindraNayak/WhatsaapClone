@@ -1,0 +1,21 @@
+.TopNavMain {
+	background-color: #202c33;
+	height: 8vh;
+	color: white;
+	display: grid;
+	grid-template-columns: 1fr 9fr 0.3fr 1fr;
+}
+
+.TopNavMainSearch,
+.TopNavMainAvatar,
+.TopNavMainMenu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.TopNavMainText {
+	display: flex;
+	text-align: left;
+	align-items: center;
+}

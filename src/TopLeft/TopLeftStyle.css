@@ -1,0 +1,27 @@
+.TopLeftMain {
+	background-color: #202c33;
+	height: 8vh;
+	display: grid;
+	grid-template-columns: 1fr 7fr 1fr 1fr 1fr;
+	color: white;
+	/* border: red solid 1px; */
+	padding-right: 1vw;
+	padding-left: 1vw;
+}
+
+.TopLeftMain > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.TopLeftMainStatus:hover {
+	cursor: pointer;
+}
+
+.TopLeftMainAdd:hover {
+	cursor: pointer;
+}
+
+.TopLeftMainMenu:hover {
+	cursor: pointer;
+}

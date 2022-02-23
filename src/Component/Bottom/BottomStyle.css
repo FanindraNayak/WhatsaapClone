@@ -1,0 +1,48 @@
+.BottomMain {
+	background-color: #202c33;
+	height: 11.5vh;
+	/* margin-top: 2vh; */
+	color: white;
+	display: grid;
+	grid-template-columns: 0.5fr 0.3fr 9fr 1fr;
+}
+.BottomMain > div {
+	/* margin-right: 20px; */
+	margin-top: 2vh;
+	display: flex;
+	height: 8vh;
+	justify-content: center;
+	align-items: center;
+}
+/* .BottomMainEmoji {
+	border: red solid 2px;
+} */
+.BottomMainFile:hover {
+	/* border: red solid 2px; */
+	/* margin-left: -2vw; */
+	cursor: pointer;
+}
+.BottomMainEmoji:hover {
+	/* border: red solid 2px; */
+	/* margin-left: -3vw; */
+	cursor: pointer;
+}
+.BottomMainInput > input {
+	width: 53vw;
+	height: 6vh;
+	border-radius: 10px;
+	background-color: #2a3942;
+	padding-left: 1vw;
+	outline: none;
+	border: none;
+}
+.BottomMainInput > input:focus {
+	outline: none;
+	color: white;
+	/* padding: 5px; */
+	font-size: 18px;
+}
+.BottomMainMic:hover {
+	cursor: pointer;
+	/* border: red solid 2px; */
+}

@@ -1,0 +1,57 @@
+.LeftBarMain {
+	background-color: #111b21;
+	height: 92vh;
+	color: white;
+	display: grid;
+	grid-template-rows: 1fr 15fr;
+}
+.LeftBarMain > div {
+	/* border: red solid 3px; */
+	top: 0;
+}
+.icon {
+	position: absolute;
+	margin-left: 1.8vh;
+	margin-top: 0.61vw;
+}
+.icon:hover {
+	cursor: pointer;
+}
+.LeftBarMainSearch {
+	/* border: red solid 3px; */
+	background-color: #111b21;
+	display: flex;
+	/* justify-content: center; */
+	align-items: center;
+	position: sticky;
+	/* padding-left: 2vh; */
+	/* margin-left: -2vh; */
+}
+.LeftBarMainSearch > input {
+	padding-left: 6vh;
+	margin-top: 1vh;
+	width: 28vw;
+	font-size: 18px;
+	height: 4vh;
+	background-color: #202c33;
+	border: none;
+	outline: none;
+	color: white;
+	margin-left: 1vh;
+	padding-top: 0.848vh;
+	padding-bottom: 0.848vh;
+	padding-right: 0.48vh;
+	/* padding: 0.42vw; */
+}
+.LeftBarMainSearch > input:focus {
+	border: none;
+	outline: none;
+}
+.LeftBarMainChats {
+	overflow-y: scroll;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
+	white-space: normal;
+	padding: 1vh 1vw;
+}

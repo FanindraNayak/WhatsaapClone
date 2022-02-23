@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+/* .App {
+	height: 100vh;
+	width: 100vw;
+} */
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 0.3fr 2.1fr 0.2fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:
+		"TopLeft TopRight TopRight"
+		"LeftBar Center Center"
+		"LeftBar Bottom Bottom";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.TopLeft {
+	/* border: red solid 3px; */
+	grid-area: TopLeft;
+	height: 8vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.LeftBar {
+	/* border: red solid 3px; */
+	grid-area: LeftBar;
+	height: 86vh;
+
+	background-color: #111b21;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.TopRight {
+	height: 8vh;
+	grid-area: TopRight;
+	/* border: red solid 3px; */
 }
 
-.App-link {
-  color: #61dafb;
+.Bottom {
+	/* border: red solid 3px; */
+	grid-area: Bottom;
+	height: 6vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Center {
+	/* border: red solid 3px; */
+	background-image: url("./Img.jfif");
+	/* background-size: cover; */
+	background-repeat: repeat;
+	grid-area: Center;
+	height: 80.5vh;
+	overflow-y: scroll;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
+	white-space: normal;
+	/* padding: 0 20px 0; */
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	/* border-radius: 10px; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #374045;
+	/* border-radius: 10px; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #374045;
 }
