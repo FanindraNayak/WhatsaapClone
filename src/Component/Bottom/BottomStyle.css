@@ -35,12 +35,14 @@
 	padding-left: 1vw;
 	outline: none;
 	border: none;
+	color: white;
+	font-size: 18px;
 }
 .BottomMainInput > input:focus {
 	outline: none;
 	color: white;
-	/* padding: 5px; */
 	font-size: 18px;
+	/* padding: 5px; */
 }
 .BottomMainMic:hover {
 	cursor: pointer;

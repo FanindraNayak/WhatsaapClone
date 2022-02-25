@@ -1,9 +1,8 @@
 .CenterMessageMainShapes {
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%, 3% 25%);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%, 3% 20%);
 	height: max-content;
-	border-radius: 0 2vh 2vh 4vh;
+	border-radius: 0 2vh 2vh 0;
 	padding-left: 3vw;
-	/* font-size: 18px; */
 	padding-top: 2px;
 	padding-bottom: 0.5vh;
 	padding-right: 1vw;

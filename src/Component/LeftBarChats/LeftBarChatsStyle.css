@@ -4,6 +4,9 @@
 	/* border: red solid 2px; */
 }
 
+.LeftBarChats:hover {
+	cursor: pointer;
+}
 .LeftBarChatsAvtar {
 	display: flex;
 	justify-content: center;

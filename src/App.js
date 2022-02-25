@@ -1,30 +1,34 @@
+import { useEffect, useState } from "react";
 import "./App.css";
-import LeftBar from "./Component/LeftBar/LeftBar";
-import TopNav from "./Component/TopNav/TopNav";
-import Bottom from "./Component/Bottom/Bottom.jsx";
-import Center from "./Component/Center/Center";
-import TopLeft from "./Component/TopLeft/TopLeft";
+import Home from "./Component/Home/Home";
+import LoginOrRegister from "./Component/LoginOrRegister/LoginOrRegister";
+
+import { useUserLoggedInOrNot } from "./GlobalStore";
 
 function App() {
+	// Zustand State
+
+	const loggedIn = useUserLoggedInOrNot((state) => state.loggedIn);
+	const chageLoggedIn = useUserLoggedInOrNot((state) => state.chageLoggedIn);
+
+	console.log(loggedIn);
+	const getWeatherUerIsLoggedIn = () => {
+		chageLoggedIn(false);
+		console.log("got data");
+		// chageLoggedIn(true);
+	};
+	useEffect(() => {
+		getWeatherUerIsLoggedIn();
+	}, []);
 	return (
 		<div className="App">
-			<div class="container">
-				<div class="TopLeft">
-					<TopLeft />
+			{loggedIn === false ? (
+				<div className="AppLoginAndRegister">
+					<LoginOrRegister />
 				</div>
-				<div class="LeftBar">
-					<LeftBar />
-				</div>
-				<div class="TopRight">
-					<TopNav />
-				</div>
-				<div class="Bottom">
-					<Bottom />
-				</div>
-				<div class="Center">
-					<Center />
-				</div>
-			</div>
+			) : (
+				<Home />
+			)}
 		</div>
 	);
 }
