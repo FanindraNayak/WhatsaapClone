@@ -2,6 +2,8 @@ import React from "react";
 
 import "./HomeStyle.css";
 
+import { useUserLoggedInOrNot } from "../../GlobalStore";
+
 import LeftBar from "../LeftBar/LeftBar";
 import TopNav from "../TopNav/TopNav";
 import Bottom from "../Bottom/Bottom.jsx";
@@ -9,6 +11,10 @@ import Center from "../Center/Center";
 import TopLeft from "../TopLeft/TopLeft";
 
 const Home = () => {
+	// Zustand
+	const loggedIn = useUserLoggedInOrNot((state) => state.loggedIn);
+	// const chageLoggedIn = useUserLoggedInOrNot((state) => state.chageLoggedIn);
+	console.log(loggedIn);
 	return (
 		<div className="Home">
 			<div className="container">

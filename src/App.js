@@ -6,6 +6,13 @@ import LoginOrRegister from "./Component/LoginOrRegister/LoginOrRegister";
 import { useUserLoggedInOrNot } from "./GlobalStore";
 
 function App() {
+	// UseStates
+	const [userData, setUserData] = useState({
+		userName: "",
+		createdAt: Date,
+		email: "",
+	});
+
 	// Zustand State
 
 	const loggedIn = useUserLoggedInOrNot((state) => state.loggedIn);
@@ -17,9 +24,12 @@ function App() {
 		console.log("got data");
 		// chageLoggedIn(true);
 	};
+
+	// UseEffects
 	useEffect(() => {
 		getWeatherUerIsLoggedIn();
 	}, []);
+
 	return (
 		<div className="App">
 			{loggedIn === false ? (

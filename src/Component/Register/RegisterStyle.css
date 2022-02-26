@@ -1,0 +1,30 @@
+/* SignUpCode */
+.LoginOrRegisterSignUpComponent {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.LoginOrRegisterSignUpComponent > h2 {
+	text-align: center;
+	margin-top: 0;
+}
+.LoginOrRegisterSignUpComponentDiv {
+	display: flex;
+	justify-content: center;
+	margin-top: 3.5vh;
+}
+.LoginOrRegisterSignUpComponentInput {
+	/* background-color: white; */
+	/* margin-top: 5vh; */
+	width: 20vw;
+}
+
+.LoginOrRegisterSignUpComponentDivButton {
+	display: flex;
+	justify-content: center;
+	margin-top: 5vh;
+}
+
+.LoginOrRegisterSignUpComponentDivButtonOne {
+	margin-right: 2vh !important;
+}
