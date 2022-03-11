@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./LoginStyle.css";
 
@@ -6,30 +6,42 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 import { useUserLoggedInOrNot } from "../../GlobalStore";
+import axios from "axios";
 
 const Login = () => {
 	const loggedIn = useUserLoggedInOrNot((state) => state.loggedIn);
 	const chageLoggedIn = useUserLoggedInOrNot((state) => state.chageLoggedIn);
 
-	// Functions
+	const [loginData, setLoginData] = useState({
+		email: "",
+		password: "",
+	});
 
-	const getUserLoggedInOrNot = () => {
-		chageLoggedIn(false);
-		console.log("userLoggedIn");
-		chageLoggedIn(true);
+	// Functions
+	const loginFunction = async () => {
+		const url = "http://localhost:8080/user/login";
+		const res = await axios.post(url, loginData, {
+			withCredentials: true,
+			Credentials: "include",
+		});
+		if (res.data.message === "user Logged In") chageLoggedIn(true);
+		else chageLoggedIn(false);
 	};
 
-	// UseEffects
+	const handelChange = (e) =>
+		setLoginData({ ...loginData, [e.target.name]: e.target.value });
 
-	useEffect(() => {
-		// getUserLoggedInOrNot();
-	}, []);
+	const clear = () => setLoginData({ email: "", password: "" });
+
 	return (
 		<div>
 			<div className="LoginOrRegisterComponents">
 				<h2>Hi Login Here</h2>
 				<div className="LoginOrRegisterComponentsDiv">
 					<TextField
+						onChange={(e) => handelChange(e)}
+						name="email"
+						value={loginData.email}
 						className="LoginOrRegisterComponentsInput"
 						id="outlined-textarea"
 						label="Email"
@@ -39,6 +51,9 @@ const Login = () => {
 				</div>
 				<div className="LoginOrRegisterComponentsDiv">
 					<TextField
+						onChange={(e) => handelChange(e)}
+						name="password"
+						value={loginData.password}
 						className="LoginOrRegisterComponentsInput"
 						id="outlined-textarea"
 						label="Password"
@@ -50,11 +65,13 @@ const Login = () => {
 					<Button
 						className="LoginOrRegisterComponentsDivButtonOne"
 						variant="outlined"
-						onClick={getUserLoggedInOrNot}
+						onClick={loginFunction}
 					>
 						Login
 					</Button>
-					<Button variant="outlined">Reset</Button>
+					<Button onClick={clear} variant="outlined">
+						Reset
+					</Button>
 				</div>
 			</div>
 		</div>

@@ -14,7 +14,7 @@ const Home = () => {
 	// Zustand
 	const loggedIn = useUserLoggedInOrNot((state) => state.loggedIn);
 	// const chageLoggedIn = useUserLoggedInOrNot((state) => state.chageLoggedIn);
-	console.log(loggedIn);
+	// console.log(loggedIn);
 	return (
 		<div className="Home">
 			<div className="container">

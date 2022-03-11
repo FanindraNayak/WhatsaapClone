@@ -8,12 +8,17 @@ const useStore = create((set) => ({
 
 const useUserDataStore = create((set) => ({
 	userData: [],
-	getUserData: () => {
-		const url = "";
-		axios.get(url).then((res) => {
-			console.log(res);
-			set({ userData: res.data });
-		});
+	addUserData: (userInfo) => {
+		set((state) => ({
+			userData: [
+				{
+					name: userInfo.name,
+					email: userInfo.email,
+					Id: userInfo.Id,
+				},
+				...state.userData,
+			],
+		}));
 	},
 }));
 

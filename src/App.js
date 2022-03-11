@@ -1,34 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import Home from "./Component/Home/Home";
 import LoginOrRegister from "./Component/LoginOrRegister/LoginOrRegister";
 
-import { useUserLoggedInOrNot } from "./GlobalStore";
+import axios from "axios";
+
+import { useUserLoggedInOrNot, useUserDataStore } from "./GlobalStore";
 
 function App() {
-	// UseStates
-	const [userData, setUserData] = useState({
-		userName: "",
-		createdAt: Date,
-		email: "",
-	});
-
 	// Zustand State
+	const addUserData = useUserDataStore((state) => state.addUserData);
 
 	const loggedIn = useUserLoggedInOrNot((state) => state.loggedIn);
 	const chageLoggedIn = useUserLoggedInOrNot((state) => state.chageLoggedIn);
-
-	console.log(loggedIn);
-	const getWeatherUerIsLoggedIn = () => {
-		chageLoggedIn(false);
-		console.log("got data");
-		// chageLoggedIn(true);
-	};
 
 	// UseEffects
 	useEffect(() => {
 		getWeatherUerIsLoggedIn();
 	}, []);
+	// Functions
+	const getWeatherUerIsLoggedIn = async () => {
+		chageLoggedIn(false);
+		const url = "http://localhost:8080/user/loggedInOrNot";
+		const res = await axios.get(url, { withCredentials: true });
+		addUserData({
+			name: res.data.name,
+			email: res.data.email,
+			Id: res.data.Id,
+		});
+		if (res.data.message === "LoggedIn") chageLoggedIn(true);
+		else chageLoggedIn(false);
+	};
 
 	return (
 		<div className="App">
