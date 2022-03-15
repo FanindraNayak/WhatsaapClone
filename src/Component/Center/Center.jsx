@@ -1,66 +1,70 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CenterMessage from "../CenterMessage/CenterMessage";
-import Lorem from "../Lorem/Lorem";
+// import Lorem from "../Lorem/Lorem";
 import "./CenterStyle.css";
 
-import { useStore } from "../../GlobalStore";
+import { useStore, useUserDataStore } from "../../GlobalStore";
+// import axios from "axios";
 
 const Center = () => {
-	const eachIndividualMessages = [
-		{
-			id: "a1",
-			message: "names of person",
-			time: "time",
-		},
-		{
-			id: "a2",
-			message: "names of person",
-			time: "time",
-		},
-		{
-			id: "a3",
-			message:
-				"names of personnames of personnames of personnames of personnames of personnames of personnames of personnames of personnames of person",
-			time: "time",
-		},
-		{
-			id: "a4",
-			message: "names of person",
-			time: "time",
-		},
-		{
-			id: "a5",
-			message: "names of person",
-			time: "time",
-		},
-	];
+	// const eachIndividualMessages = [
+	// 	{
+	// 		id: "a1",
+	// 		message: "names of person",
+	// 		time: "time",
+	// 	},
+	// 	{
+	// 		id: "a2",
+	// 		message: "names of person",
+	// 		time: "time",
+	// 	},
+	// 	{
+	// 		id: "a3",
+	// 		message:
+	// 			"names of personnames of personnames of personnames of personnames of personnames of personnames of personnames of personnames of person",
+	// 		time: "time",
+	// 	},
+	// 	{
+	// 		id: "a4",
+	// 		message: "names of person",
+	// 		time: "time",
+	// 	},
+	// 	{
+	// 		id: "a5",
+	// 		message: "names of person",
+	// 		time: "time",
+	// 	},
+	// ];
 
+	const [eachIndividualMessages, setEachIndividuaData] = useState([]);
 	// Zustand states
 
 	const toggle = useStore((state) => state.toggle);
 	const changeToggle = useStore((state) => state.changeToggle);
 
-	// functions
+	const userMessages = useUserDataStore((state) => state.userMessages);
 
-	const getMessageData = () => {
-		console.log("Got the required Data");
-		changeToggle(false);
+	const getMeeagesss = async () => {
+		const data = await userMessages;
+		setEachIndividuaData(data);
+		// console.log(data);
 	};
 
-	if (toggle) getMessageData();
-
+	useEffect(() => {
+		getMeeagesss();
+	}, [userMessages]);
 	return (
 		<div className="CenterMian">
 			<br />
 
-			<CenterMessage message="Somethings" time="time" />
+			{/* <CenterMessage message="Somethings" time="time" /> */}
 
 			{eachIndividualMessages.map((value) => {
 				return (
 					<CenterMessage
-						key={value.id}
+						key={value._id}
 						message={value.message}
-						time={value.time}
+						time={value.createdAt}
 					/>
 				);
 			})}

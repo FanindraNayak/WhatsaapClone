@@ -1,34 +1,47 @@
 import React, { useState } from "react";
 import "./BottomStyle.css";
 
+import axios from "axios";
+
 import SendIcon from "@mui/icons-material/Send";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 
-import { useStore } from "../../GlobalStore";
+import { useStore, useUserDataStore } from "../../GlobalStore";
 
 const Bottom = () => {
 	// Local States
 	const [message, setMessage] = useState({
-		id: "ads",
+		fromUserId: "",
+		toUserId: "",
 		message: "",
-		time: new Date().toLocaleString(),
 	});
 
 	// Zustand States
 	const toggle = useStore((state) => state.toggle);
 	const changeToggle = useStore((state) => state.changeToggle);
-	console.log(toggle);
+
+	const userData = useUserDataStore((state) => state.userData);
+	const toUserIdForSendingMessage = useUserDataStore(
+		(state) => state.toUserIdForSendingMessage
+	);
+
+	// console.log(toUserIdForSendingMessage);
 	// Functions
 
-	const submitMessages = () => {
+	const submitMessages = async () => {
 		changeToggle(false);
-		setMessage({
-			id: "ads",
-			message: "",
-			time: new Date().toLocaleString(),
-		});
-		changeToggle(true);
+		setTimeout(() => {
+			setMessage({
+				fromUserId: userData[0].Id,
+				toUserId: toUserIdForSendingMessage,
+				message: "",
+			});
+		}, []);
+		const url = "http://localhost:8080/message/message";
+		await axios.post(url, message);
+		// console.log(res.data.message);
+		// changeToggle(true);
 	};
 
 	return (

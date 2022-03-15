@@ -30,6 +30,7 @@ function App() {
 		});
 		if (res.data.message === "LoggedIn") chageLoggedIn(true);
 		else chageLoggedIn(false);
+		// console.log(res.data);
 	};
 
 	return (

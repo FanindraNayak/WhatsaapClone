@@ -1,4 +1,3 @@
-import axios from "axios";
 import create from "zustand";
 
 const useStore = create((set) => ({
@@ -20,6 +19,19 @@ const useUserDataStore = create((set) => ({
 			],
 		}));
 	},
+	toUserIdForSendingMessage: "",
+	setToUserId: (id) => {
+		set((state) => ({
+			toUserIdForSendingMessage: id,
+		}));
+	},
+	userMessages: [],
+	setUserMessage: (userMessagesFromDb) => {
+		set((state) => ({
+			userMessages: [userMessagesFromDb, ...state.userMessages],
+		}));
+	},
+	clearUserMessage: () => set({ userMessages: [] }),
 }));
 
 const useUserLoggedInOrNot = create((set) => ({
