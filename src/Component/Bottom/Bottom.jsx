@@ -30,20 +30,33 @@ const Bottom = () => {
 	// Functions
 
 	const submitMessages = async () => {
+		if (message.toUserId.length > 5)
+			console.log("User to send id is less tehn 5");
+		// console.log(toggle);
 		changeToggle(false);
-		setTimeout(() => {
-			setMessage({
-				fromUserId: userData[0].Id,
-				toUserId: toUserIdForSendingMessage,
-				message: "",
-			});
-		}, []);
+		// console.log(toggle);
+		console.log(toUserIdForSendingMessage);
+		// setTimeout(() => {
+		setMessage({
+			fromUserId: userData[0].Id,
+			toUserId: toUserIdForSendingMessage,
+			message: "",
+		});
+		// }, 0);
 		const url = "http://localhost:8080/message/message";
 		await axios.post(url, message);
-		// console.log(res.data.message);
-		// changeToggle(true);
 	};
 
+	const hadelInputChange = async (e) => {
+		// console.log(e);
+		setMessage({ ...message, message: e.target.value });
+	};
+
+	const handelEnterKey = async (e) => {
+		if (e.code === "Enter") {
+			submitMessages();
+		}
+	};
 	return (
 		<div className="BottomMain">
 			<div className="BottomMainEmoji">
@@ -56,7 +69,8 @@ const Bottom = () => {
 				<input
 					type="text"
 					value={message.message}
-					onChange={(e) => setMessage({ ...message, message: e.target.value })}
+					onChange={(e) => hadelInputChange(e)}
+					onKeyDown={(e) => handelEnterKey(e)}
 				/>
 			</div>
 			<div className="BottomMainMic" onClick={submitMessages}>

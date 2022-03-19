@@ -14,6 +14,9 @@
 	justify-content: center;
 	align-items: center;
 }
+.TopLeftMainAvatar:hover {
+	cursor: pointer;
+}
 .TopLeftMainStatus:hover {
 	cursor: pointer;
 }
@@ -24,4 +27,37 @@
 
 .TopLeftMainMenu:hover {
 	cursor: pointer;
+}
+
+.TopLeftMainProfile {
+	z-index: 1;
+	background-color: #111b21;
+	width: 32vw;
+	height: 100vh;
+	margin-left: -20px;
+	padding-right: 1vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/* border-radius: 5px solid blue; */
+}
+.TopLeftMainProfilePicture {
+	margin-top: 20px;
+}
+.TopLeftMainProfileClose {
+	margin-top: -50vh;
+}
+.TopLeftMainProfileClose:hover {
+	cursor: pointer;
+}
+
+.TopLeftMainProfileNameAndPicture {
+	margin-top: 8vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.TopLeftMainProfileNameAndPicture > p {
+	font-size: 20px;
 }

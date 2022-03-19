@@ -13,8 +13,8 @@ const Login = () => {
 	const chageLoggedIn = useUserLoggedInOrNot((state) => state.chageLoggedIn);
 
 	const [loginData, setLoginData] = useState({
-		email: "",
-		password: "",
+		email: "asd",
+		password: "asd",
 	});
 
 	// Functions

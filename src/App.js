@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "./App.css";
+
 import Home from "./Component/Home/Home";
 import LoginOrRegister from "./Component/LoginOrRegister/LoginOrRegister";
 

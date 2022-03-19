@@ -19,3 +19,35 @@
 	text-align: left;
 	align-items: center;
 }
+
+.TopNavMainMenuRightSection {
+	z-index: 1;
+	background-color: #111b21;
+	padding: 0;
+	margin-left: 40vw;
+	/* width: 10vw; */
+	/* padding-right: 4vw; */
+	height: 20vh;
+	display: flex;
+	justify-content: center;
+}
+
+.TopNavMainMenuRightSection > ul {
+	/* margin-left: 50vw; */
+	padding: 0;
+	/* padding-top: 20px; */
+}
+.TopNavMainMenuRightSection > ul > li {
+	list-style-type: none;
+	/* border: red solid 3px; */
+	padding-top: 3vh;
+	padding-bottom: 3vh;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	font-size: 20px;
+	/* background-color: red; */
+}
+
+.TopNavMainMenuRightSection > ul > li:hover {
+	background-color: #202c33;
+}

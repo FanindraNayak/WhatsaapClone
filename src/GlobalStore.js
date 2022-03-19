@@ -19,6 +19,7 @@ const useUserDataStore = create((set) => ({
 			],
 		}));
 	},
+	clearUserData: () => set({ userData: [] }),
 	toUserIdForSendingMessage: "",
 	setToUserId: (id) => {
 		set((state) => ({
@@ -42,4 +43,17 @@ const useUserLoggedInOrNot = create((set) => ({
 		})),
 }));
 
-export { useStore, useUserDataStore, useUserLoggedInOrNot };
+const useMessageRefetchingToggle = create((set) => ({
+	fetchMessage: false,
+	changeMessageFetch: (toggleValue) =>
+		set((state) => ({
+			fetchMessage: toggleValue,
+		})),
+}));
+
+export {
+	useStore,
+	useUserDataStore,
+	useUserLoggedInOrNot,
+	useMessageRefetchingToggle,
+};
